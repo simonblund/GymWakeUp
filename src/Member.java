@@ -6,6 +6,9 @@ public class Member {
     private String efternamn;
     private Date membershipenddate;
 
+    // används för kostnadsberäkning
+    private int numberOfMonths;
+
     // Getters and setters for all instance variables
     public String getPersonnummer() {
         return personnummer;
@@ -38,6 +41,14 @@ public class Member {
 
     public void setMembershipenddate(Date membershipenddate) {
         this.membershipenddate = membershipenddate;
+    }
+
+    public int getNumberOfMonths(){
+        return numberOfMonths;
+    }
+
+    public void setNumberOfMonths(int numberOfMonths) {
+        this.numberOfMonths = numberOfMonths;
     }
 
 
