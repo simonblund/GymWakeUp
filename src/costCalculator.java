@@ -1,5 +1,7 @@
 public class costCalculator{
 
+    private int cost;
+    
     public int calculate(int numberOfMonths){
 
         if (numberOfMonths < 1)
