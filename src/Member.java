@@ -1,12 +1,17 @@
 import java.util.Date;
 
 public class Member {
-
-
     private String personnummer;
     private String fornamn;
     private String efternamn;
     private Date membershipenddate;
+
+    // används för kostnadsberäkning
+    private int numberOfMonths;
+
+    //för autenticering
+
+    private String password;
 
     // Getters and setters for all instance variables
     public String getPersonnummer() {
@@ -40,6 +45,22 @@ public class Member {
 
     public void setMembershipenddate(Date membershipenddate) {
         this.membershipenddate = membershipenddate;
+    }
+
+    public int getNumberOfMonths(){
+        return numberOfMonths;
+    }
+
+    public void setNumberOfMonths(int numberOfMonths) {
+        this.numberOfMonths = numberOfMonths;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void testpnChecker(String pn){
