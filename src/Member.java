@@ -9,6 +9,10 @@ public class Member {
     // används för kostnadsberäkning
     private int numberOfMonths;
 
+    //för autenticering
+
+    private String password;
+
     // Getters and setters for all instance variables
     public String getPersonnummer() {
         return personnummer;
@@ -49,6 +53,14 @@ public class Member {
 
     public void setNumberOfMonths(int numberOfMonths) {
         this.numberOfMonths = numberOfMonths;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 
