@@ -1,6 +1,8 @@
 import java.util.Date;
 
 public class Member {
+
+
     private String personnummer;
     private String fornamn;
     private String efternamn;
@@ -12,7 +14,7 @@ public class Member {
     }
 
     public void setPersonnummer(String personnummer) {
-        this.personnummer = personnummer;
+        this.personnummer = personnummer; //940709-3030
 
     }
 
@@ -38,6 +40,20 @@ public class Member {
 
     public void setMembershipenddate(Date membershipenddate) {
         this.membershipenddate = membershipenddate;
+    }
+
+    public void testpnChecker(String pn){
+        System.out.println(pn);
+        System.out.println(personnummerChecker(pn));
+    }
+
+    public boolean personnummerChecker(String pn){
+        //PN är 10 tecken långt
+        if(pn.length()!=11){
+            return false;
+        }
+        if (true)
+        return true;
     }
 
 
