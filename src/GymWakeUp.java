@@ -11,6 +11,7 @@ public class GymWakeUp {
 
     public static void main(String[] args){
         // Initierar programmet.
+        // testa angivet personnummer
     }
     private void showMenu(){
         System.out.print("Välkommen till WakeUpGym \nVälj ett av alternativen nedan:");
