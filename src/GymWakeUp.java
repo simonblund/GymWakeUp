@@ -16,6 +16,12 @@ public class GymWakeUp {
     }
     private static void showMenu(){
         System.out.print("Välkommen till WakeUpGym \nVälj ett av alternativen nedan:\n\n");
+        if(user==null){
+            System.out.print("Kund: UTLOGGAD\n\n");
+        } else {
+            System.out.print("Kund:"+user.getFornamn()+" "+user.getEfternamn() +"\n\n");
+        }
+
         System.out.println("1. Bli medlem");
         System.out.println("2. Logga in");
         System.out.println("3. Boka plats på aktivitet");
@@ -71,6 +77,7 @@ public class GymWakeUp {
         user = member; // Aktiv användare är nu den nya användaren.
 
         System.out.println("Grattis du är nu användare!");
+        showMenu();
 
 
     }
