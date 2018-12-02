@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Scanner;
 
 /*
@@ -73,6 +75,7 @@ public class GymWakeUp {
 
         setMemberPassword(member, sc); // Set member password.
 
+        setMemberEndDate(member, sc);
 
         user = member; // Aktiv användare är nu den nya användaren.
 
@@ -104,10 +107,41 @@ public class GymWakeUp {
 
         if(password1.equals(password2)){ // Kontrollera att lösenorden överensstämmer
             String hashed = BCrypt.hashpw(password1, BCrypt.gensalt()); //Hasha lösenordet
+            password1 = null;
+            password2 = null;
             member.setPassword(hashed); // Spara det hashade lösenordet
+            System.gc();
         } else {
             System.out.println("Lösenorden stämde inte, försök igen.");
             setMemberPassword(member, sc);
+        }
+
+    }
+    private static void setMemberEndDate(Member member, Scanner sc){
+        System.out.println("Ange hur många månader ditt medlemsskap ska vara:");
+        long months = sc.nextLong();
+        LocalDate date = LocalDate.now().plusMonths(months);
+        System.out.println("Det betyder att ditt medlemskap tar slut den " + date);
+        System.out.println("Det skulle kosta: "+ costCalculator.calculate((int)months));
+        System.out.println("Är det okej? J / N eller avbryt, A");
+        switch (sc.next()){
+            case "J":{
+                member.setMembershipenddate(date);
+                System.out.println("Sparat.");
+                break;
+            }
+            case "N":{
+                System.out.println("Okej, försök på nytt.");
+                setMemberEndDate(member, sc);
+                break;
+            }
+            default: {
+                System.out.println("Okej, din användare sparas inte");
+                member = null;
+                System.gc();
+                System.exit(0);
+                break;
+            }
         }
 
     }
