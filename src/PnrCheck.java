@@ -9,7 +9,7 @@ This checks that the Swedish Personnummer called is correct, it checks length, s
 
 public class PnrCheck {
 
-    public boolean personnummerChecker(String pn){
+    public static boolean personnummerChecker(String pn){
         //PN är 11 tecken långt
         if(pn.length()!=11){
             System.out.println("Fail length");
@@ -28,7 +28,7 @@ public class PnrCheck {
 
         return true;
     }
-    private boolean pnrStructureCheck(String pnr){
+    private static boolean pnrStructureCheck(String pnr){
         String patternString = "\\d{6}-\\d{4}"; // 6 siffror - 4 siffror
         Pattern pattern = Pattern.compile(patternString);
         Matcher matcher = pattern.matcher(pnr);
@@ -36,7 +36,7 @@ public class PnrCheck {
         return matcher.matches(); // Om pnr stämmer med struktur upplagd, returnera true, annars false.
 
     }
-    private boolean pnrLuhnCheck(String pnr){
+    private static boolean pnrLuhnCheck(String pnr){
         String birth_and_count = pnr.replace("-", "").substring(0,10); // Ta bort strecket
 
         int[] c = {birth_and_count.length()% 2 == 0 ? 1 : 2}; //

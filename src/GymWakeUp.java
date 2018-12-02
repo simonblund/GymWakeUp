@@ -54,21 +54,32 @@ public class GymWakeUp {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Skapa medlemskap\n");
-
-        System.out.println("Skriv in ditt personnummer");
-        try{
-
-            member.setPersonnummer(sc.next());
-        }
-        catch (Exception e){
-
-        }
+        setMemberPnr(member, sc); // Separat funktion för att... rekursivitet är skönt.
 
         System.out.println("Skriv ditt förnamn");
+        String fnamn = sc.next(); // Jag vet, jag borde validera detta..
+        member.setFornamn(fnamn);
+
         System.out.println("Skriv ditt efternamn");
-        System.out.println(" ");
+        String enamn = sc.next(); // Jag vet, jag borde validera detta...
+        member.setEfternamn(enamn);
+
+        user = member; // Aktiv användare är nu den nya användaren.
+
+        System.out.println("Grattis du är nu användare!");
 
 
+    }
+
+    private void setMemberPnr(Member member, Scanner sc){
+        System.out.println("Skriv in ditt personnummer");
+        String pnr = sc.next();
+        if(PnrCheck.personnummerChecker(pnr)){
+            member.setPersonnummer(pnr);
+        } else{
+            System.out.println("Ditt personnummer är ogiltigt!\nSkriv in ditt personnummer på nytt");
+            setMemberPnr(member, sc);
+        }
     }
 
     private void signIn(){
