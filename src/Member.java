@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.regex.Pattern;
 
 public class Member {
     private String personnummer;
@@ -63,19 +64,7 @@ public class Member {
         this.password = password;
     }
 
-    public void testpnChecker(String pn){
-        System.out.println(pn);
-        System.out.println(personnummerChecker(pn));
-    }
 
-    public boolean personnummerChecker(String pn){
-        //PN är 10 tecken långt
-        if(pn.length()!=11){
-            return false;
-        }
-        if (true)
-        return true;
-    }
 
 
 }
