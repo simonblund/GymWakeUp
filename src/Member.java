@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.regex.Pattern;
 
@@ -5,14 +6,10 @@ public class Member {
     private String personnummer;
     private String fornamn;
     private String efternamn;
-    private Date membershipenddate;
+    private LocalDate membershipenddate;
 
-    // används för kostnadsberäkning
-    private int numberOfMonths;
-
-    //för autenticering
-
-    private String password;
+    private int numberOfMonths; // används för kostnadsberäkning
+    private String password; //för autenticering
 
     // Getters and setters for all instance variables
     public String getPersonnummer() {
@@ -40,11 +37,11 @@ public class Member {
         this.efternamn = efternamn;
     }
 
-    public Date getMembershipenddate() {
+    public LocalDate getMembershipenddate() {
         return membershipenddate;
     }
 
-    public void setMembershipenddate(Date membershipenddate) {
+    public void setMembershipenddate(LocalDate membershipenddate) {
         this.membershipenddate = membershipenddate;
     }
 

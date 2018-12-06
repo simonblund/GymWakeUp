@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 public class CostCalculator{
 
     private int cost;
 
     public int calculate(int numberOfMonths){
+=======
+public class costCalculator{
+    
+    public static int calculate(int numberOfMonths){
+        int cost;
+>>>>>>> b30ee4c6940ece35c9c85abc32ee3288856ae674
 
         if (numberOfMonths < 1)
             cost =0;
