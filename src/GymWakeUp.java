@@ -1,15 +1,15 @@
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
 GymWakeUp-klassen är den klass som startar programmet.
-
 Här finns funktioner för meny och kanske även autentisering.
 
  */
 public class GymWakeUp {
     private static Member user;
+    private static ArrayList<Member> members = new ArrayList<Member>();
 
     public static void main(String[] args){
         // Initierar programmet.
@@ -76,6 +76,8 @@ public class GymWakeUp {
         setMemberPassword(member, sc); // Set member password.
 
         setMemberEndDate(member, sc);
+
+        members.add(member);
 
         user = member; // Aktiv användare är nu den nya användaren.
 
