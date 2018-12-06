@@ -1,3 +1,11 @@
+package main;
+
+import main.Activity;
+import main.CostCalculator;
+import main.Member;
+import main.PnrCheck;
+import test.MemberTest;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,10 +18,12 @@ Här finns funktioner för meny och kanske även autentisering.
 public class GymWakeUp {
     private static Member user; // Håller den aktiva användaren.
     private static ArrayList<Member> members = new ArrayList<Member>(); // Håller alla medlemsobjekt.
+    private static ArrayList<Activity> activities = new ArrayList<Activity>();
 
     public static void main(String[] args){
         // Initierar programmet.
         // testa angivet personnummer
+        MemberTest.createTestMembers();
         showMenu();
     }
     private static void showMenu(){
@@ -159,6 +169,7 @@ public class GymWakeUp {
         // returneras true eller false
         // om false återgå till huvudmeny
         // om true återgå till huvudmeny men sätt user variabeln till memberobjektet vars personnummer överensstämmde ovan.
+        /*
 
         System.out.println("Ange personnummer");
         String angettPersonnummer = sc.nextLine();
@@ -184,12 +195,17 @@ public class GymWakeUp {
             System.out.println("Hittar ej personnummret. Försök igen.");
 
         }
+        */
 
     }
 
     private void joinActivity(){
         // Use previously selected or created member-object and join existing activity.
 
+    }
+
+    public static void testmember(Member testmember){ // Inserts testmembers to array
+        members.add(testmember);
     }
 
 }

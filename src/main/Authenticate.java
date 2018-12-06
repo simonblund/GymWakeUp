@@ -1,10 +1,10 @@
-/*tar in 'lösenord' som parameter, och returnar
+package main;/*tar in 'lösenord' som parameter, och returnar
 en boolean. Villkoret för true är att det lösenord som användaren skrivit interface
 matchar lösenordet som lagrats i user objektet
 */
 
 public class Authenticate {
-
+/*
     private boolean result;
     private String realPassword = user.getPassword();
 
@@ -18,8 +18,8 @@ public class Authenticate {
         }
 
         return result;
-    } */
-    /*
+    }
+
     Jag lånar en funktion från ett bibliotek för att hasha lösenord i vårt program så de inte sparas i plantext,
     egentligen onödigt för detta program men best-practice i riktiga program. Så man kan inte längre kontrollera lösenord med
     equals utan måste använda nedanstående kontrollmekanism. Implementera den på ett passligt ställe :)
