@@ -71,7 +71,9 @@ public class GymWakeUp {
         String enamn = sc.next(); // Jag vet, jag borde validera detta...
         member.setEfternamn(enamn);
 
-        setMemberPassword(member, sc); // Set member password.
+        System.out.println("Skriv ditt lösenord");
+        String password = sc.next();
+        member.setPassword(password); // Set member password.
 
 
         user = member; // Aktiv användare är nu den nya användaren.

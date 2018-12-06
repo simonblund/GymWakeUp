@@ -1,21 +1,16 @@
-/*tar in 'användarnamnnamn' och 'lösenord' som parametrar, och returnar
-en boolean. Villkoret för true är att användarnamn equals ett namnet på ett
- skapat member-objekt, och att lösenord matchar 'password', som är en variabel
- i samma member-objekt.
+/*tar in 'lösenord' som parameter, och returnar
+en boolean. Villkoret för true är att det lösenord som användaren skrivit interface
+matchar lösenordet som lagrats i user objektet
 */
 
-public class authenticate {
+public class Authenticate {
 
-    private String username;
-    private String password;
     private boolean result;
+    private String realPassword = user.getPassword();
 
-    public boolean checkUsernamePassword(String username, String password){
+    public boolean checkPassword(String enteredPassword){
 
-        this.username = username;
-        this.password = password;
-
-        if (this.password equals this.username.getPassword() ) {
+        if (enteredPassword.equals(realPassword)) {
             result = true;
         }
         else {
