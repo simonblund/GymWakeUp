@@ -28,6 +28,6 @@ public class MemberTest {
 
     public static void createTestMembers(){
         createMembersTest("Stefan", "Stefansson","341212-3220", 2, true);
-        createMembersTest("Lars", "Stefansson","341212-0317", 2, false);
+        createMembersTest("Lars", "Stefansson", "341212-0317", 2, false);
     }
 }

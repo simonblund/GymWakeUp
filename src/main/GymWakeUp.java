@@ -1,9 +1,11 @@
 package main;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import main.Activity;
 import main.CostCalculator;
 import main.Member;
 import main.PnrCheck;
+import test.ActivityTest;
 import test.MemberTest;
 
 import java.time.LocalDate;
@@ -24,6 +26,7 @@ public class GymWakeUp {
         // Initierar programmet.
         // testa angivet personnummer
         MemberTest.createTestMembers();
+        ActivityTest.createActivities();
         showMenu();
     }
     private static void showMenu(){
@@ -52,7 +55,7 @@ public class GymWakeUp {
                     break;
                 }
                 case 3: {
-                    //joinActivity();
+                    joinActivity();
                     break;
                 }
                 case 4: {
@@ -199,13 +202,28 @@ public class GymWakeUp {
 
     }
 
-    private void joinActivity(){
+    private static void joinActivity(){
         // Use previously selected or created member-object and join existing activity.
 
+        BookActivity.showActivities(activities);
+
+        // TODO Ta bort följande utkommentering före inlämning och även activitetsstarten
+        /*
+        if(user.getMembershipenddate().isAfter(LocalDate.now())){
+            activities.add(testactivity);
+        } else {
+            System.out.println("Ert medlemskap har gått ut och ni kan inte boka aktiviteter.");
+            showMenu();
+        }
+
+        */
     }
 
     public static void testmember(Member testmember){ // Inserts testmembers to array
         members.add(testmember);
+    }
+    public static void testActivity(Activity testactivity){
+        activities.add(testactivity);
     }
 
 }
