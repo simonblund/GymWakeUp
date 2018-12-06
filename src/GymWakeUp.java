@@ -160,6 +160,31 @@ public class GymWakeUp {
         // om false återgå till huvudmeny
         // om true återgå till huvudmeny men sätt user variabeln till memberobjektet vars personnummer överensstämmde ovan.
 
+        System.out.println("Ange personnummer");
+        String angettPersonnummer = sc.nextLine();
+
+        if (members.contains(angettPersonnummer){
+
+            Boolean result = Authenticate(member); //Kvar att göra: hitta namnet på objektet som har angett personnummer?
+
+            if(result == true){
+                user = member;
+
+            }
+
+            else if(result == false){
+                System.out.println(Felaktigt lösenord);
+
+            }
+
+        }
+
+        else {
+
+            System.out.println("Hittar ej personnummret. Försök igen.");
+
+        }
+
     }
 
     private void joinActivity(){
