@@ -8,8 +8,8 @@ Här finns funktioner för meny och kanske även autentisering.
 
  */
 public class GymWakeUp {
-    private static Member user;
-    private static ArrayList<Member> members = new ArrayList<Member>();
+    private static Member user; // Håller den aktiva användaren.
+    private static ArrayList<Member> members = new ArrayList<Member>(); // Håller alla medlemsobjekt.
 
     public static void main(String[] args){
         // Initierar programmet.
@@ -126,7 +126,7 @@ public class GymWakeUp {
         long months = sc.nextLong();
         LocalDate date = LocalDate.now().plusMonths(months);
         System.out.println("Det betyder att ditt medlemskap tar slut den " + date);
-        System.out.println("Det skulle kosta: "+ costCalculator.calculate((int)months));
+        System.out.println("Det skulle kosta: "+ CostCalculator.calculate((int)months));
         System.out.println("Är det okej? J / N eller avbryt, A");
         switch (sc.next()){
             case "J":{
@@ -152,6 +152,13 @@ public class GymWakeUp {
 
     private void signIn(){
         // Find an existing member-object and use that to complete other actions.
+        // input personnummer
+        // kolla om det finns en medlem i members arraylisten med det personnummret
+        // Om ja -> skicka memberobjektet som har personnummret till authenticate klassens checkpassword metod
+
+        // returneras true eller false
+        // om false återgå till huvudmeny
+        // om true återgå till huvudmeny men sätt user variabeln till memberobjektet vars personnummer överensstämmde ovan.
 
     }
 
