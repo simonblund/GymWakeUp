@@ -7,27 +7,30 @@ Om det matchar så returnas boolean result med värde true
 om ej matchar så returnas boolean result med värde false
 */
 
-public class Authenticate {
+public class Authenticate
+{
 
-    public boolean checkPassword(Member candidate){
+    public boolean checkPassword(Member candidate)
+    {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Ange lösenord:");
-        String angettLosenord = input.nextLine;
+        String angettLosenord = input.nextLine();
 
         if (BCrypt.checkpw(angettLosenord, candidate.getPassword()))
   	       {
-             boolean result = true;
-             return result;
+              boolean result = true;
+              return result;
            }
 
-        else {
-            boolean result = false;
-            return result;
-        }
+        else
+            {
+                boolean result = false;
+                return result;
+            }
 
-    }
-}
+    } // end method checkPassword()
+} //end class Authenticate
 /*
     Jag lånar en funktion från ett bibliotek för att hasha lösenord i vårt program så de inte sparas i plantext,
     egentligen onödigt för detta program men best-practice i riktiga program. Så man kan inte längre kontrollera lösenord med
@@ -41,5 +44,3 @@ else
 	System.out.println("It does not match");
 
      */
-
-}
