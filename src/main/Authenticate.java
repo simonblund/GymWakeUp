@@ -1,25 +1,34 @@
-package main;/*tar in 'lösenord' som parameter, och returnar
-en boolean. Villkoret för true är att det lösenord som användaren skrivit interface
-matchar lösenordet som lagrats i user objektet
+package main;
+import java.util.Scanner;
+/*tar in member-objektet som har det personnummer som angetts i inloggningen.
+Frågar efter lösenord.
+Kontrollerar om lösenordet matchar det hashade lösenordet.
+Om det matchar så returnas true 
+om ej matchar så returnas false
 */
 
 public class Authenticate {
-/*
-    private boolean result;
-    private String realPassword = user.getPassword();
 
-    public boolean checkPassword(String enteredPassword){
+    public boolean checkPassword(Member candidate){
 
-        if (enteredPassword.equals(realPassword)) {
-            result = true;
-        }
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ange lösenord:");
+        String angettLosenord = input.nextLine;
+
+        if (BCrypt.checkpw(angettLosenord, candidate.getPassword()))
+  	       {
+             boolean result = true;
+             return result;
+           }
+
         else {
-            result = false;
+            boolean result = false;
+            return result;
         }
 
-        return result;
     }
-
+}
+/*
     Jag lånar en funktion från ett bibliotek för att hasha lösenord i vårt program så de inte sparas i plantext,
     egentligen onödigt för detta program men best-practice i riktiga program. Så man kan inte längre kontrollera lösenord med
     equals utan måste använda nedanstående kontrollmekanism. Implementera den på ett passligt ställe :)

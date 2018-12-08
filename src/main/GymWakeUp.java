@@ -164,43 +164,28 @@ public class GymWakeUp {
     }
 
     private void signIn(){
-        // Find an existing member-object and use that to complete other actions.
-        // input personnummer
-        // kolla om det finns en medlem i members arraylisten med det personnummret
-        // Om ja -> skicka memberobjektet som har personnummret till authenticate klassens checkpassword metod
 
-        // returneras true eller false
-        // om false återgå till huvudmeny
-        // om true återgå till huvudmeny men sätt user variabeln till memberobjektet vars personnummer överensstämmde ovan.
-        /*
+      // Find an existing member-object and use that to complete other actions.
+      // input personnummer
+      // kolla om det finns en medlem i members arraylisten med det personnummret
+      // Om ja -> skicka memberobjektet som har personnummret till authenticate klassens checkpassword metod
+
+      // returneras true eller false
+      // om false återgå till huvudmeny
+      // om true återgå till huvudmeny men sätt user variabeln till memberobjektet vars personnummer överensstämmde ovan.
 
         System.out.println("Ange personnummer");
         String angettPersonnummer = sc.nextLine();
 
-        if (members.contains(angettPersonnummer){
+        for (int counter = 0; counter <= members.length(); counter++){
 
-            Boolean result = Authenticate(member); //Kvar att göra: hitta namnet på objektet som har angett personnummer?
-
-            if(result == true){
-                user = member;
-
+            if (members<counter>.getPersonnummer() == angettPersonnummer) {
+                    if (Authenticate.checkPassword(members<counter>) == true){
+                        user = members<counter>;
+                    }
             }
-
-            else if(result == false){
-                System.out.println(Felaktigt lösenord);
-
-            }
-
         }
 
-        else {
-
-            System.out.println("Hittar ej personnummret. Försök igen.");
-
-        }
-        */
-
-    }
 
     private static void joinActivity(){
         // Use previously selected or created member-object and join existing activity.
