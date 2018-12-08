@@ -2,9 +2,9 @@ package main;
 import java.util.Scanner;
 /*tar in member-objektet som har det personnummer som angetts i inloggningen.
 Frågar efter lösenord.
-Kontrollerar om lösenordet matchar det hashade lösenordet.
-Om det matchar så returnas true 
-om ej matchar så returnas false
+Kontrollerar om den inskrivna lösenordet matchar det hashade lösenordet som finns i member objektet.
+Om det matchar så returnas boolean result med värde true
+om ej matchar så returnas boolean result med värde false
 */
 
 public class Authenticate {
