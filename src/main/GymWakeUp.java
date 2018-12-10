@@ -1,10 +1,6 @@
 package main;
 
-import com.sun.xml.internal.bind.v2.TODO;
-import main.Activity;
-import main.CostCalculator;
-import main.Member;
-import main.PnrCheck;
+
 import test.ActivityTest;
 import test.MemberTest;
 
@@ -40,8 +36,7 @@ public class GymWakeUp {
         System.out.println("1. Bli medlem");
         System.out.println("2. Logga in");
         System.out.println("3. Boka plats på aktivitet");
-        System.out.println("4. Logga ut");
-        System.out.println("5. Avsluta");
+        System.out.println("4. Avsluta");
 
         Scanner sc = new Scanner(System.in);
         while (true){
@@ -59,15 +54,9 @@ public class GymWakeUp {
                     joinActivity();
                     break;
                 }
-
-                case 4:{
-                    logOut();
-                    break;
-                }
-                case 5: {
+                case 4: {
                     System.exit(0);
                 }
-
                 default:{
                     System.out.println("Ogiltigt menyval, försök igen.");
                 }
@@ -93,9 +82,7 @@ public class GymWakeUp {
         String enamn = sc.next(); // Jag vet, jag borde validera detta...
         member.setEfternamn(enamn);
 
-        System.out.println("Skriv ditt lösenord");
-        String password = sc.next();
-        member.setPassword(password); // Set member password.
+        setMemberPassword(member, sc);
 
         setMemberEndDate(member, sc);
 
@@ -199,19 +186,15 @@ public class GymWakeUp {
 
     private static void joinActivity(){
         // Use previously selected or created member-object and join existing activity.
-
-        BookActivity.showActivities(activities, user);
-
-        // TODO Ta bort följande utkommentering före inlämning och även activitetsstarten
-        /*
-        if(user.getMembershipenddate().isAfter(LocalDate.now())){
-            activities.add(testactivity);
+        if (user == null){
+            System.out.println("Ni måste logga in för att ha åtkomst till funktionen.");
+            showMenu();
+        } else if(user.getMembershipenddate().isAfter(LocalDate.now())){
+            BookActivity.showActivities(activities, user);
         } else {
             System.out.println("Ert medlemskap har gått ut och ni kan inte boka aktiviteter.");
             showMenu();
         }
-
-        */
     }
 
     public static void testmember(Member testmember){ // Inserts testmembers to array
@@ -222,8 +205,4 @@ public class GymWakeUp {
         activities.add(testactivity);
     }
 
-    //logga ut
-    public static void logOut(){
-        user = null;
-    }
 }
