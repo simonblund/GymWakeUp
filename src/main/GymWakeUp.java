@@ -164,6 +164,7 @@ public class GymWakeUp {
     }
 
     private void signIn(){
+      import java.util.Scanner;
 
       // Find an existing member-object and use that to complete other actions.
       // input personnummer
@@ -175,12 +176,13 @@ public class GymWakeUp {
       // om true återgå till huvudmeny men sätt user variabeln till memberobjektet vars personnummer överensstämmde ovan.
 
         System.out.println("Ange personnummer");
+        Scanner sc = new Scanner(System.in);
         String angettPersonnummer = sc.nextLine();
 
-        for (int counter = 0; counter < members.length(); counter++){
+        for (int counter = 0; counter < members.size(); counter++){
 
-            if (members.get(counter).getPersonnummer() == angettPersonnummer) {
-                    if (Authenticate.checkPassword(members.get(counter)) == true){
+            if (Authenticate.checkPassword.equals(members.get(counter))) {
+                    if (Authenticate.checkPassword(members.get(counter))){
                         user = members.get(counter);
                         break;
                     }
