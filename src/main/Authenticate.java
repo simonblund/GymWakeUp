@@ -10,7 +10,7 @@ om ej matchar så returnas boolean result med värde false
 public class Authenticate
 {
 
-    public boolean checkPassword(Member candidate)
+    public static boolean checkPassword(Member candidate)
     {
 
         Scanner input = new Scanner(System.in);

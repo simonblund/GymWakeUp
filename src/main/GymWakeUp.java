@@ -51,7 +51,7 @@ public class GymWakeUp {
                     break;
                 }
                 case 2: {
-                    //signIn();
+                    signIn();
                     break;
                 }
                 case 3: {
@@ -163,31 +163,31 @@ public class GymWakeUp {
 
     }
 
-    private void signIn(){
-      import java.util.Scanner;
+    private static void signIn() {
 
-      // Find an existing member-object and use that to complete other actions.
-      // input personnummer
-      // kolla om det finns en medlem i members arraylisten med det personnummret
-      // Om ja -> skicka memberobjektet som har personnummret till authenticate klassens checkpassword metod
+        // Find an existing member-object and use that to complete other actions.
+        // input personnummer
+        // kolla om det finns en medlem i members arraylisten med det personnummret
+        // Om ja -> skicka memberobjektet som har personnummret till authenticate klassens checkpassword metod
 
-      // returneras true eller false
-      // om false återgå till huvudmeny
-      // om true återgå till huvudmeny men sätt user variabeln till memberobjektet vars personnummer överensstämmde ovan.
+        // returneras true eller false
+        // om false återgå till huvudmeny
+        // om true återgå till huvudmeny men sätt user variabeln till memberobjektet vars personnummer överensstämmde ovan.
 
         System.out.println("Ange personnummer");
         Scanner sc = new Scanner(System.in);
-        String angettPersonnummer = sc.nextLine();
+        String angettPersonnummer = sc.next();
+        for (int counter = 0; counter < members.size(); counter++) {
 
-        for (int counter = 0; counter < members.size(); counter++){
-
-            if (Authenticate.checkPassword.equals(members.get(counter))) {
-                    if (Authenticate.checkPassword(members.get(counter))){
-                        user = members.get(counter);
-                        break;
-                    }
+            if (members.get(counter).getPersonnummer().equals(angettPersonnummer)) {
+                if (Authenticate.checkPassword(members.get(counter))) {
+                    user = members.get(counter);
+                    break;
+                }
             }
         }
+        showMenu();
+    }
 
 
     private static void joinActivity(){
@@ -210,6 +210,7 @@ public class GymWakeUp {
     public static void testmember(Member testmember){ // Inserts testmembers to array
         members.add(testmember);
     }
+
     public static void testActivity(Activity testactivity){
         activities.add(testactivity);
     }

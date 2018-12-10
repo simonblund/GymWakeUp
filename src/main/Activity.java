@@ -5,7 +5,7 @@ import java.time.LocalTime;
 
 public class Activity {
     private String name;
-    private Member[][] seats = new Member[2][2];
+    private Member[][] seats = new Member[3][3];
     private LocalDate date;
     private LocalTime time;
     private long duration;
