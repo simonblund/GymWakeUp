@@ -177,11 +177,12 @@ public class GymWakeUp {
         System.out.println("Ange personnummer");
         String angettPersonnummer = sc.nextLine();
 
-        for (int counter = 0; counter <= members.length(); counter++){
+        for (int counter = 0; counter < members.length(); counter++){
 
             if (members.get(counter).getPersonnummer() == angettPersonnummer) {
                     if (Authenticate.checkPassword(members.get(counter)) == true){
                         user = members.get(counter);
+                        break;
                     }
             }
         }
