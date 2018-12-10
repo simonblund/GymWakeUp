@@ -29,7 +29,7 @@ public class GymWakeUp {
         ActivityTest.createActivities();
         showMenu();
     }
-    private static void showMenu(){
+    public static void showMenu(){
         System.out.print("Välkommen till WakeUpGym \nVälj ett av alternativen nedan:\n\n");
         if(user==null){
             System.out.print("Kund: UTLOGGAD\n\n");
@@ -193,7 +193,7 @@ public class GymWakeUp {
     private static void joinActivity(){
         // Use previously selected or created member-object and join existing activity.
 
-        BookActivity.showActivities(activities);
+        BookActivity.showActivities(activities, user);
 
         // TODO Ta bort följande utkommentering före inlämning och även activitetsstarten
         /*
