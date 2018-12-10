@@ -40,7 +40,8 @@ public class GymWakeUp {
         System.out.println("1. Bli medlem");
         System.out.println("2. Logga in");
         System.out.println("3. Boka plats på aktivitet");
-        System.out.println("4. Avsluta");
+        System.out.println("4. Logga ut");
+        System.out.println("5. Avsluta");
 
         Scanner sc = new Scanner(System.in);
         while (true){
@@ -58,9 +59,15 @@ public class GymWakeUp {
                     joinActivity();
                     break;
                 }
-                case 4: {
+
+                case 4:{
+                    logOut();
+                    break;
+                }
+                case 5: {
                     System.exit(0);
                 }
+
                 default:{
                     System.out.println("Ogiltigt menyval, försök igen.");
                 }
@@ -215,4 +222,8 @@ public class GymWakeUp {
         activities.add(testactivity);
     }
 
+    //logga ut
+    public static void logOut(){
+        user = null;
+    }
 }
